@@ -1,0 +1,72 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <string.h>
+#define size 10
+
+//Identifiers
+int Allrooms[size]={1-10}; //make bigger later maybe
+int UsersRooms[size]={1-10};
+int preBooked1;
+int preBooked2;
+int i;
+int user;
+
+
+//Functions
+int check_avail();
+int room_quantity();
+int GenerateBooked1(int i);
+int GenerateBooked2(int i);
+void staff_menu();
+void guest_menu();
+void add_room();
+void remove_room();
+void change_rooms();
+void view_bookings();
+void userInput(int user);
+
+int main()
+{
+    srand(time(NULL));//generate random number for prebooked rooms
+    
+    GenerateBooked1(i);
+    GenerateBooked2(i);
+    userInput(user);
+
+    return 0;
+}
+//Prebooked rooms picked at random
+        int GenerateBooked1(int i)
+    {
+        preBooked1 = rand () %10;
+        preBooked1 +=1;
+return preBooked1;
+    }
+    
+        int GenerateBooked2(int i)
+    {
+       
+        preBooked2 = rand () %10;
+        preBooked2 +=1;
+return preBooked2;
+    }
+//Guest or Staff Menu
+        void userInput(int user)
+    {
+            printf("Are you a Guest or Staff?\n1) Guest\n2) Staff\n");
+            scanf("%d",&user);
+        if(user==1)
+    {
+            printf("1");//make call Guest
+    }
+        else if(user==2)
+        {
+            printf("2");//make call Staff
+        }
+        else
+        {
+            printf("Not an option.");  //make repeat question
+        }
+return;
+    }
